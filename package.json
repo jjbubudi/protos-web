@@ -1,0 +1,28 @@
+{
+  "name": "@jjbubudi/protos-web",
+  "version": "1.0.0",
+  "description": "Generated grpc-web client code",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjbubudi/protos-web.git"
+  },
+  "author": "Jimmy Au",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjbubudi/protos-web/issues"
+  },
+  "homepage": "https://github.com/jjbubudi/protos-web#readme",
+  "peerDependencies": {
+    "google-protobuf": "^3.6.1",
+    "grpc-web": "^1.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5",
+    "@types/google-protobuf": "^3.2.7",
+    "google-protobuf": "^3.6.1",
+    "grpc-web": "^1.0.4"
+  }
+}
