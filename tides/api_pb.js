@@ -532,6 +532,7 @@ proto.jimmyau.tides.PredictedTidesResponse.prototype.toObject = function(opt_inc
  */
 proto.jimmyau.tides.PredictedTidesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    time: (f = msg.getTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     predictionsList: jspb.Message.toObjectList(msg.getPredictionsList(),
     proto.jimmyau.tides.PredictedTidesResponse.Prediction.toObject, includeInstance)
   };
@@ -570,6 +571,11 @@ proto.jimmyau.tides.PredictedTidesResponse.deserializeBinaryFromReader = functio
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 2:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setTime(value);
+      break;
     case 1:
       var value = new proto.jimmyau.tides.PredictedTidesResponse.Prediction;
       reader.readMessage(value,proto.jimmyau.tides.PredictedTidesResponse.Prediction.deserializeBinaryFromReader);
@@ -604,6 +610,14 @@ proto.jimmyau.tides.PredictedTidesResponse.prototype.serializeBinary = function(
  */
 proto.jimmyau.tides.PredictedTidesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTime();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
   f = message.getPredictionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -798,6 +812,36 @@ proto.jimmyau.tides.PredictedTidesResponse.Prediction.prototype.getMeters = func
 /** @param {number} value */
 proto.jimmyau.tides.PredictedTidesResponse.Prediction.prototype.setMeters = function(value) {
   jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp time = 2;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.jimmyau.tides.PredictedTidesResponse.prototype.getTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
+};
+
+
+/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+proto.jimmyau.tides.PredictedTidesResponse.prototype.setTime = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.jimmyau.tides.PredictedTidesResponse.prototype.clearTime = function() {
+  this.setTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.jimmyau.tides.PredictedTidesResponse.prototype.hasTime = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

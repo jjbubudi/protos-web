@@ -61,6 +61,11 @@ export namespace PredictedTidesRequest {
 }
 
 export class PredictedTidesResponse extends jspb.Message {
+  getTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasTime(): boolean;
+  clearTime(): void;
+
   getPredictionsList(): Array<PredictedTidesResponse.Prediction>;
   setPredictionsList(value: Array<PredictedTidesResponse.Prediction>): void;
   clearPredictionsList(): void;
@@ -76,6 +81,7 @@ export class PredictedTidesResponse extends jspb.Message {
 
 export namespace PredictedTidesResponse {
   export type AsObject = {
+    time?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     predictionsList: Array<PredictedTidesResponse.Prediction.AsObject>,
   }
 
